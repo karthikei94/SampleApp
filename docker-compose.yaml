@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  sampleapp:
+    image: sample-app-api:1.0
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5179:5000"
+      # - "7232:5001"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      # - ASPNETCORE_HTTPS_PORTS=5001
+      - ASPNETCORE_HTTP_PORTS=5000
